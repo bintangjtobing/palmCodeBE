@@ -20,7 +20,7 @@ class FormController extends Controller
         $formSubmissions = Member::with(['surfingBooking', 'idVerification'])->get();
 
         return response()->json([
-            'status' => 'success',
+            'status' => '200',
             'message' => 'All form submission retrieved successfully',
             'data' => $formSubmissions,
         ], 200);
@@ -71,7 +71,7 @@ class FormController extends Controller
 
         if ($validator->fails()) {
             return response()->json([
-                'status' => 'error',
+                'status' => '401',
                 'message' => 'Validation failed',
                 'errors' => $validator->errors(),
             ], 422);
@@ -99,7 +99,7 @@ class FormController extends Controller
                 $verificationPhoto = $cloudinaryResponse->getSecurePath();
             } catch (\Exception $e) {
                 return response()->json([
-                    'status' => 'error',
+                    'status' => '401',
                     'message' => 'Failed to upload verification photo',
                     'errors' => [$e->getMessage()],
                 ], 500);
@@ -129,14 +129,14 @@ class FormController extends Controller
         } catch (\Exception $e) {
             // Tangani kesalahan jika gagal mengirim email
             return response()->json([
-                'status' => 'error',
+                'status' => '401',
                 'message' => 'Failed to send email notification',
                 'errors' => [$e->getMessage()],
             ], 500);
         }
 
         return response()->json([
-            'status' => 'success',
+            'status' => '200',
             'message' => 'Data saved successfully',
             'data' => [
                 'member' => $member,
@@ -152,13 +152,13 @@ class FormController extends Controller
 
         if (!$formData) {
             return response()->json([
-                'status' => 'error',
+                'status' => '401',
                 'message' => 'Form submission not found',
             ], 404);
         }
 
         return response()->json([
-            'status' => 'success',
+            'status' => '200',
             'message' => 'Form submission retrieved successfully',
             'data' => $formData,
         ], 200);
@@ -183,7 +183,7 @@ class FormController extends Controller
 
         if ($validator->fails()) {
             return response()->json([
-                'status' => 'error',
+                'status' => '401',
                 'message' => 'Validation failed',
                 'errors' => $validator->errors(),
             ], 422);
@@ -194,7 +194,7 @@ class FormController extends Controller
 
         if (!$formData) {
             return response()->json([
-                'status' => 'error',
+                'status' => '401',
                 'message' => 'Form submission not found',
             ], 404);
         }
@@ -226,7 +226,7 @@ class FormController extends Controller
                     $verificationPhoto = $cloudinaryResponse->getSecurePath();
                 } catch (\Exception $e) {
                     return response()->json([
-                        'status' => 'error',
+                        'status' => '401',
                         'message' => 'Failed to upload verification photo',
                         'errors' => [$e->getMessage()],
                     ], 500);
@@ -240,7 +240,7 @@ class FormController extends Controller
         }
 
         return response()->json([
-            'status' => 'success',
+            'status' => '200',
             'message' => 'Data updated successfully',
             'data' => $formData,
         ], 200);
@@ -253,7 +253,7 @@ class FormController extends Controller
 
         if (!$formData) {
             return response()->json([
-                'status' => 'error',
+                'status' => '401',
                 'message' => 'Form submission not found',
             ], 404);
         }
@@ -272,7 +272,7 @@ class FormController extends Controller
         $formData->delete();
 
         return response()->json([
-            'status' => 'success',
+            'status' => '200',
             'message' => 'Data deleted successfully',
         ], 200);
     }

@@ -5,9 +5,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 // Import semua controller yang akan digunakan
-use App\Http\Controllers\MemberController;
-use App\Http\Controllers\SurfingBookingController;
-use App\Http\Controllers\IDVerificationController;
+use App\Http\Controllers\Api\MemberController;
+use App\Http\Controllers\Api\SurfingBookingController;
+use App\Http\Controllers\Api\IDVerificationController;
 use App\Http\Controllers\Api\AuthController;
 
 /*
