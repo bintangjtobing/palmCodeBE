@@ -23,7 +23,7 @@ git clone https://github.com/bintangjtobing/palmCodeBE.git
 
 ```
 
-cd palmCodeTestBE
+cd palmCodeBE
 
 ```
 
