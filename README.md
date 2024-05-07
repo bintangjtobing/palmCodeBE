@@ -1,6 +1,6 @@
 # PalmCode Test - Backend API
 
-This repository contains the backend API for the PalmCode Test project. It provides endpoints for managing members, surfing bookings, and ID verifications.
+This repository contains the backend API for the PalmCode Test project. It provides endpoints for managing members, surfing bookings, and ID verifications. You can see the results on https://be-palmcode.octansidn.com.
 
 ## Technologies Used
 
