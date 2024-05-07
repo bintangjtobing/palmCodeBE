@@ -97,7 +97,7 @@ php artisan serve
 
 ## Testing
 
-You can use Postman to test the API endpoints. Import the provided Postman collection and environment files, and start testing the endpoints.
+You can use Postman to test the API endpoints from `https://documenter.getpostman.com/view/32442929/2sA3JJ9PAY`. Import the provided Postman collection and environment files, and start testing the endpoints.
 
 ## Documentation
 
