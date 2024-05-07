@@ -89,7 +89,6 @@ body, html {
     background-color: #333;
     color: #fff;
     text-align: left;
-    padding: 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -130,13 +129,10 @@ body, html {
     .footer {
         text-align: center; /* Atur posisi teks footer ke tengah untuk layar kecil */
         position: relative; /* Ubah posisi menjadi relatif */
-        padding-bottom: 60px; /* Tambahkan padding bottom untuk memberi ruang bagi footer */
     }
 
     .footer::before {
-        content: ""; /* Tambahkan pseudo-element */
         display: block;
-        height: 60px; /* Atur tinggi sesuai dengan tinggi footer */
     }
 
     .footer-icons {

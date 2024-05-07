@@ -22,14 +22,16 @@
             <li>authentication - 🟢 200 OK!</li>
         </ul>
         <div class="mt-4">
-            <a href="/telescope" target="_blank" class="btn btn-outline-secondary mx-3">➤ Monitoring by <abbr title="Telescope">Telescope</abbr></a>
-            <a href="https://documenter.getpostman.com/view/32442929/2sA3JJ9PAY" target="_blank" class="btn btn-outline-secondary">➤ API Documentation</a>
+            <div class="btn-group-vertical" role="group" aria-label="Basic example">
+                <a href="/telescope" target="_blank" class="btn btn-outline-secondary my-1">➤ Monitoring by <abbr title="Telescope">Telescope</abbr></a>
+                <a href="https://documenter.getpostman.com/view/32442929/2sA3JJ9PAY" target="_blank" class="btn btn-outline-secondary my-1">➤ API Documentation</a>
+              </div>
         </div>
     </div>
 
-    <footer class="footer p-3">
-        <div class="">&copy;2024 - With gratitude to <a href="https://www.instagram.com/palmco.de/" target="_blank" style="color:#fff;">Palm Co.De</a>, I humbly present this code as a token of appreciation for the wonderful opportunity. Warm regards, Bintang Tobing</div>
-        <div class="footer-icons">
+    <footer class="footer p-5">
+        <div>&copy;2024 - With gratitude to <a href="https://www.instagram.com/palmco.de/" target="_blank" style="color:#fff;">Palm Co.De</a>, I humbly present this code as a token of appreciation for the wonderful opportunity. Warm regards, Bintang Tobing</div>
+        <div class="footer-icons mb-3">
             <a href="https://github.com/bintangjtobing/palmCodeBE" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://linkedin.com/in/bintangtobing" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://instagram.com/bcjlt" target="_blank"><i class="fab fa-instagram"></i></a>
