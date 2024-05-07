@@ -111,3 +111,26 @@ body, html {
     margin-right: 10px;
     font-size: 20px;
 }
+/* Tambahkan aturan media queries */
+@media (max-width: 768px) {
+    .header {
+        font-size: 24px; /* Kurangi ukuran font untuk layar kecil */
+    }
+
+    .paragraph {
+        font-size: 14px; /* Kurangi ukuran font untuk layar kecil */
+        margin-bottom: 20px; /* Kurangi margin bottom untuk layar kecil */
+    }
+
+    .recommendations {
+        max-width: 100%; /* Atur lebar maksimum untuk layar kecil */
+    }
+
+    .footer {
+        text-align: center; /* Atur posisi teks footer ke tengah untuk layar kecil */
+    }
+
+    .footer-icons {
+        text-align: center; /* Atur posisi ikon ke tengah untuk layar kecil */
+    }
+}
