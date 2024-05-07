@@ -6,7 +6,7 @@
     <title>Backend Portal - PalmCo.de</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    @php $rand = Str::random(9); @endphp
+    @php $rand = Str::random(12); @endphp
     <link rel="stylesheet" href="style.css?v={{ $rand }}">
 </head>
 <body>
@@ -27,9 +27,9 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="ml-5">&copy;2024 - With gratitude to <a href="https://www.instagram.com/palmco.de/" target="_blank" style="color:#fff;">Palm Co.De</a>, I humbly present this code as a token of appreciation for the wonderful opportunity. Warm regards, Bintang Tobing</div>
-        <div class="footer-icons mr-3">
+    <footer class="footer p-3">
+        <div class="">&copy;2024 - With gratitude to <a href="https://www.instagram.com/palmco.de/" target="_blank" style="color:#fff;">Palm Co.De</a>, I humbly present this code as a token of appreciation for the wonderful opportunity. Warm regards, Bintang Tobing</div>
+        <div class="footer-icons">
             <a href="https://github.com/bintangjtobing/palmCodeBE" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://linkedin.com/in/bintangtobing" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://instagram.com/bcjlt" target="_blank"><i class="fab fa-instagram"></i></a>

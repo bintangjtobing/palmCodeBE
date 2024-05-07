@@ -111,6 +111,7 @@ body, html {
     margin-right: 10px;
     font-size: 20px;
 }
+
 /* Tambahkan aturan media queries */
 @media (max-width: 768px) {
     .header {
@@ -128,9 +129,21 @@ body, html {
 
     .footer {
         text-align: center; /* Atur posisi teks footer ke tengah untuk layar kecil */
+        position: relative; /* Ubah posisi menjadi relatif */
+        padding-bottom: 60px; /* Tambahkan padding bottom untuk memberi ruang bagi footer */
+    }
+
+    .footer::before {
+        content: ""; /* Tambahkan pseudo-element */
+        display: block;
+        height: 60px; /* Atur tinggi sesuai dengan tinggi footer */
     }
 
     .footer-icons {
         text-align: center; /* Atur posisi ikon ke tengah untuk layar kecil */
+        position: absolute; /* Ubah posisi menjadi absolut */
+        bottom: 0; /* Tempatkan di bagian bawah */
+        left: 0;
+        width: 100%;
     }
 }
