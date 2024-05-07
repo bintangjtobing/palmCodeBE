@@ -71,21 +71,24 @@ php artisan serve
 
 ## API Endpoints
 
--   **Members**: `/api/members`
+**Members**: `/api/members`
+
 -   `GET`: Retrieve all members.
 -   `POST`: Create a new member.
 -   `GET`: Retrieve details of a specific member.
 -   `PUT`: Update information of an existing member.
 -   `DELETE`: Delete a member.
 
--   **Surfing Bookings**: `/api/surfing-bookings`
+**Surfing Bookings**: `/api/surfing-bookings`
+
 -   `GET`: Retrieve all surfing bookings.
 -   `POST`: Create a new surfing booking.
 -   `GET`: Retrieve details of a specific surfing booking.
 -   `PUT`: Update information of an existing surfing booking.
 -   `DELETE`: Delete a surfing booking.
 
--   **Bookings with member data**: `/api/booking`
+**Bookings with member data**: `/api/booking`
+
 -   `GET`: Retrieve all ID verifications.
 -   `POST`: Create a new ID verification.
 -   `GET`: Retrieve details of a specific ID verification.
