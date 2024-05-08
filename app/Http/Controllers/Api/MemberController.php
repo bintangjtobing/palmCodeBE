@@ -14,16 +14,30 @@ class MemberController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index()
-    {
-        $members = Member::all();
+    public function index(Request $request)
+{
+    // Ambil semua query string untuk filter
+    $filters = $request->all();
 
-        return response()->json([
-            'status' => '200',
-            'message' => 'Members retrieved successfully',
-            'data' => $members,
-        ]);
+    // Query untuk mengambil data members
+    $query = Member::query();
+
+    // Filter data berdasarkan query string (jika ada)
+    foreach ($filters as $key => $value) {
+        if ($value) {
+            $query->where($key, 'LIKE', "%$value%");
+        }
     }
+
+    // Ambil data hasil filter
+    $members = $query->get();
+
+    return response()->json([
+        'status' => '200',
+        'message' => 'Members retrieved successfully',
+        'data' => $members,
+    ]);
+}
 
     /**
      * Store a newly created member in storage.

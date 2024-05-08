@@ -14,14 +14,29 @@ use Illuminate\Support\Facades\Mail;
 
 class FormController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // Ambil semua pengajuan formulir pemesanan
-        $formSubmissions = Member::with(['surfingBooking', 'idVerification', 'country'])->get();
+        $query = Member::with(['surfingBooking', 'idVerification', 'country']);
+
+        // Filter data berdasarkan parameter yang diberikan
+        if ($request->has('name')) {
+            $query->where('name', 'LIKE', '%' . $request->name . '%');
+        }
+
+        if ($request->has('email')) {
+            $query->where('email', $request->email);
+        }
+
+        if ($request->has('country_id')) {
+            $query->where('country_id', $request->country_id);
+        }
+
+        $formSubmissions = $query->get();
 
         return response()->json([
             'status' => '200',
-            'message' => 'All form submission retrieved successfully',
+            'message' => 'Filtered form submissions retrieved successfully',
             'data' => $formSubmissions,
         ], 200);
     }

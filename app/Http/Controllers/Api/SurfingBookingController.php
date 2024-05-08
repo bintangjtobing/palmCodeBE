@@ -14,9 +14,23 @@ class SurfingBookingController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index()
+    public function index(Request $request)
     {
-        $surfingBookings = SurfingBooking::all();
+        // Ambil semua query string untuk filter
+        $filters = $request->all();
+
+        // Query untuk mengambil data surfing bookings
+        $query = SurfingBooking::query();
+
+        // Filter data berdasarkan query string (jika ada)
+        foreach ($filters as $key => $value) {
+            if ($value) {
+                $query->where($key, 'LIKE', "%$value%");
+            }
+        }
+
+        // Ambil data hasil filter
+        $surfingBookings = $query->get();
 
         return response()->json([
             'status' => '200',

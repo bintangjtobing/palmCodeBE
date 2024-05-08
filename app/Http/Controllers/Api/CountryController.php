@@ -9,9 +9,13 @@ use App\Models\Country;
 class CountryController extends Controller
 {
     // Mengambil semua data country
-    public function index()
+    public function index(Request $request)
     {
         $countries = Country::all();
+        // Filter data jika parameter filter diberikan
+        if ($request->has('country_name') || $request->has('icon_name')) {
+            return $this->filter($request);
+        }
         return response()->json([
             'status' => 200,
             'data' => $countries,
@@ -84,7 +88,6 @@ class CountryController extends Controller
     }
     public function filter(Request $request)
     {
-        // Ambil parameter yang dikirim dari request
         $countryName = $request->input('country_name');
         $iconName = $request->input('icon_name');
 
