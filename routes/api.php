@@ -9,7 +9,7 @@ use App\Http\Controllers\Api\MemberController;
 use App\Http\Controllers\Api\SurfingBookingController;
 use App\Http\Controllers\Api\IDVerificationController;
 use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\API\CountryController;
+use App\Http\Controllers\Api\CountryController;
 
 /*
 |--------------------------------------------------------------------------
