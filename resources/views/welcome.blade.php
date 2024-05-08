@@ -15,9 +15,11 @@
         <div class="paragraph animated fade-in">
             This portal provides powerful tools and features for managing your backend operations efficiently.
         </div>
+        <h6>Database monitoring status</h6>
         <ul class="recommendations fade-in">
             <li>form-submissions - 🟢 200 OK!</li>
             <li>members - 🟢 200 OK!</li>
+            <li>countries - 🟢 200 OK!</li>
             <li>surfing-bookings - 🟢 200 OK!</li>
             <li>authentication - 🟢 200 OK!</li>
         </ul>
