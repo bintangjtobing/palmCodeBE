@@ -148,7 +148,7 @@ class FormController extends Controller
     public function show($id)
     {
         // Temukan data berdasarkan ID
-        $formData = Member::with(['surfingBooking', 'idVerification'])->find($id);
+        $formData = Member::with(['surfingBooking', 'idVerification','country'])->find($id);
 
         if (!$formData) {
             return response()->json([
