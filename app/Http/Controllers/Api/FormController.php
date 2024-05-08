@@ -17,7 +17,7 @@ class FormController extends Controller
     public function index()
     {
         // Ambil semua pengajuan formulir pemesanan
-        $formSubmissions = Member::with(['surfingBooking', 'idVerification'])->get();
+        $formSubmissions = Member::with(['surfingBooking', 'idVerification', 'countries'])->get();
 
         return response()->json([
             'status' => '200',
