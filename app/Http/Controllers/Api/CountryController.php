@@ -83,38 +83,38 @@ class CountryController extends Controller
         ], 204);
     }
     public function filter(Request $request)
-{
-    // Ambil parameter yang dikirim dari request
-    $countryName = $request->input('country_name');
-    $iconName = $request->input('icon_name');
+    {
+        // Ambil parameter yang dikirim dari request
+        $countryName = $request->input('country_name');
+        $iconName = $request->input('icon_name');
 
-    // Query untuk mengambil data countries
-    $query = Country::query();
+        // Query untuk mengambil data countries
+        $query = Country::query();
 
-    // Filter data berdasarkan parameter yang diberikan
-    if ($countryName) {
-        $query->where('country_name', 'LIKE', "%$countryName%");
-    }
+        // Filter data berdasarkan parameter yang diberikan
+        if ($countryName) {
+            $query->where('country_name', 'LIKE', "%$countryName%");
+        }
 
-    if ($iconName) {
-        $query->where('icon_name', $iconName);
-    }
+        if ($iconName) {
+            $query->where('icon_name', $iconName);
+        }
 
-    // Ambil data hasil filter
-    $countries = $query->get();
-    // Check jika tidak ada data yang ditemukan
-    if ($countries->isEmpty()) {
+        // Ambil data hasil filter
+        $countries = $query->get();
+        // Check jika tidak ada data yang ditemukan
+        if ($countries->isEmpty()) {
+            return response()->json([
+                'status' => 404,
+                'message' => 'No countries found with the given criteria.'
+            ], 404);
+        }
+        // Return response JSON
         return response()->json([
-            'status' => 404,
-            'message' => 'No countries found with the given criteria.'
-        ], 404);
+            'status' => 200,
+            'data' => $countries,
+            'message' => 'Countries filtered successfully.'
+        ]);
     }
-    // Return response JSON
-    return response()->json([
-        'status' => 200,
-        'data' => $countries,
-        'message' => 'Countries filtered successfully.'
-    ]);
-}
 
 }
