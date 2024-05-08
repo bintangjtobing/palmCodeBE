@@ -28,6 +28,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::resource('surfing-bookings', SurfingBookingController::class);
     Route::resource('id-verifications', IDVerificationController::class);
     Route::resource('countries', CountryController::class);
+    Route::get('countries/filter', 'App\Http\Controllers\Api\CountryController@filter');
 
 });
 Route::post('login', [AuthController::class, 'login']);

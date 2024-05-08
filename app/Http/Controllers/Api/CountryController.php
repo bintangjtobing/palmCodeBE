@@ -82,4 +82,39 @@ class CountryController extends Controller
             'message' => 'Country deleted successfully.'
         ], 204);
     }
+    public function filter(Request $request)
+{
+    // Ambil parameter yang dikirim dari request
+    $countryName = $request->input('country_name');
+    $iconName = $request->input('icon_name');
+
+    // Query untuk mengambil data countries
+    $query = Country::query();
+
+    // Filter data berdasarkan parameter yang diberikan
+    if ($countryName) {
+        $query->where('country_name', 'LIKE', "%$countryName%");
+    }
+
+    if ($iconName) {
+        $query->where('icon_name', $iconName);
+    }
+
+    // Ambil data hasil filter
+    $countries = $query->get();
+    // Check jika tidak ada data yang ditemukan
+    if ($countries->isEmpty()) {
+        return response()->json([
+            'status' => 404,
+            'message' => 'No countries found with the given criteria.'
+        ], 404);
+    }
+    // Return response JSON
+    return response()->json([
+        'status' => 200,
+        'data' => $countries,
+        'message' => 'Countries filtered successfully.'
+    ]);
+}
+
 }
