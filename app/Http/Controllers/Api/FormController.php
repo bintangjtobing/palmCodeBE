@@ -29,7 +29,7 @@ class FormController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
-            'country' => 'required|string',
+            'country_id' => 'required|integer',
             'email' => 'required|email|unique:members,email',
             'whatsapp_number' => 'required|string',
 
@@ -43,8 +43,8 @@ class FormController extends Controller
             'name.required' => 'Name is required.',
             'name.string' => 'Name must be a string.',
 
-            'country.required' => 'Country is required.',
-            'country.string' => 'Country must be a string.',
+            'country_id.required' => 'Country is required.',
+            'country_id.string' => 'Country must be an integer.',
 
             'email.required' => 'Email is required.',
             'email.email' => 'Email must be a valid email address.',
@@ -79,7 +79,7 @@ class FormController extends Controller
 
         $member = Member::create([
             'name' => $request->name,
-            'country' => $request->country,
+            'country_id' => $request->country_id,
             'email' => $request->email,
             'whatsapp_number' => $request->whatsapp_number,
         ]);
@@ -119,7 +119,7 @@ class FormController extends Controller
         try {
             Mail::to('info@palmcode.io')->send(new BookingNotification(
                 $request->name,
-                $request->country,
+                $request->country_id,
                 $request->email,
                 $request->whatsapp_number,
                 $request->surfing_experience,
@@ -169,7 +169,7 @@ class FormController extends Controller
         // Validasi request
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
-            'country' => 'required|string',
+            'country_id' => 'required|integer',
             'email' => 'required|email|unique:members,email,' . $id,
             'whatsapp_number' => 'required|string',
 
@@ -202,7 +202,7 @@ class FormController extends Controller
         // Perbarui data Member
         $formData->update([
             'name' => $request->name,
-            'country' => $request->country,
+            'country_id' => $request->country_id,
             'email' => $request->email,
             'whatsapp_number' => $request->whatsapp_number,
         ]);

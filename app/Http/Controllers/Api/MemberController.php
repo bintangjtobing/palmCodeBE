@@ -35,7 +35,7 @@ class MemberController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
-            'country' => 'required|string',
+            'country_id' => 'required|integer',
             'email' => 'required|email|unique:members,email',
             'whatsapp_number' => 'required|string',
         ]);
@@ -50,7 +50,7 @@ class MemberController extends Controller
 
         $member = Member::create([
             'name' => $request->name,
-            'country' => $request->country,
+            'country_id' => $request->country_id,
             'email' => $request->email,
             'whatsapp_number' => $request->whatsapp_number,
         ]);
@@ -106,7 +106,7 @@ class MemberController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
-            'country' => 'required|string',
+            'country_id' => 'required|integer',
             'email' => 'required|email|unique:members,email,' . $id,
             'whatsapp_number' => 'required|string',
         ]);
@@ -121,7 +121,7 @@ class MemberController extends Controller
 
         $member->update([
             'name' => $request->name,
-            'country' => $request->country,
+            'country_id' => $request->country_id,
             'email' => $request->email,
             'whatsapp_number' => $request->whatsapp_number,
         ]);

@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\MemberController;
 use App\Http\Controllers\Api\SurfingBookingController;
 use App\Http\Controllers\Api\IDVerificationController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\API\CountryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::resource('members', MemberController::class);
     Route::resource('surfing-bookings', SurfingBookingController::class);
     Route::resource('id-verifications', IDVerificationController::class);
+    Route::resource('countries', CountryController::class);
+
 });
 Route::post('login', [AuthController::class, 'login']);
 
