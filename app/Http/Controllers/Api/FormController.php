@@ -51,8 +51,6 @@ class FormController extends Controller
             'surfing_experience' => 'required|integer|min:1|max:10',
             'visit_date' => 'required|date',
             'desired_board' => 'required|string',
-
-            'verification_type' => 'required|string|in:KTP,ID,passport',
             'verification_photo' => 'nullable',
         ], [
             'name.required' => 'Name is required.',
@@ -78,9 +76,6 @@ class FormController extends Controller
 
             'desired_board.required' => 'Desired board is required.',
             'desired_board.string' => 'Desired board must be a string.',
-
-            'verification_type.required' => 'Verification type is required.',
-            'verification_type.string' => 'Verification type must be a string.',
             'verification_type.in' => 'Verification type must be one of: KTP, ID, or passport.',
         ]);
 
@@ -126,7 +121,7 @@ class FormController extends Controller
 
         $idVerification = IDVerification::create([
             'member_id' => $member->id,
-            'verification_type' => $request->verification_type,
+            'verification_type' => 'ID',
             'verification_photo' => $verificationPhoto,
         ]);
 
