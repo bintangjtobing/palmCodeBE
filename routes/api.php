@@ -32,7 +32,6 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 Route::post('login', [AuthController::class, 'login']);
 
-
 // Public routes
 Route::post('register', [AuthController::class, 'register']);
 Route::post('otp', [AuthController::class, 'otp']);
