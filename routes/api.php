@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\SurfingBookingController;
 use App\Http\Controllers\Api\IDVerificationController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CountryController;
+use App\Http\Controllers\Api\csrfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::resource('countries', CountryController::class);
 });
 Route::post('login', [AuthController::class, 'login']);
+
 
 // Public routes
 Route::post('register', [AuthController::class, 'register']);
