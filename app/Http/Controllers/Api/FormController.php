@@ -127,7 +127,7 @@ class FormController extends Controller
 
         // Kirim email pemberitahuan
         try {
-            Mail::to('info@palmcode.io')->send(new BookingNotification(
+            Mail::to('bintangjtobing@gmail.com')->send(new BookingNotification(
                 $request->name,
                 $request->country_id,
                 $request->email,
